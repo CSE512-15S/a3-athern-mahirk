@@ -1,0 +1,88 @@
+body {
+  width: 100%;
+  margin: 0;
+  background: url(http://subtlepatterns.com/patterns/crossword.png);
+}
+
+.header {
+  height: 300px;
+  background: rgba(52, 73, 94, 0.8);
+  font-family:'Raleway';
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+
+.projectname {
+  font-size: 2em;
+}
+
+h1 {
+  font-family: 'Raleway';
+  text-align: center;
+}
+
+button {
+  padding: 1% 2%;
+  margin: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid #333;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+
+
+
+.legend rect {
+  fill:white;
+  stroke:black;
+  opacity:0.8;
+}
+
+.legend-items text {
+  margin: 10px;
+}
+
+button:hover {
+  color: #333;
+  border-color: #333;
+  background: rgba(200, 255, 255, 1);
+}
+
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #666;
+  shape-rendering: crispEdges;
+}
+
+.chart {
+  margin-top: 2%;
+  font-family: 'Raleway';
+}
+
+.op {
+  fill-opacity: 0.5;
+}
+
+
+.MTtweet {
+  fill: #E74C3C;
+}
+
+.RTtweet {
+  fill: #27AE60;
+}
+
+.REtweet {
+  fill: #2980B9;
+}
+
+.tweetinfo {
+ fill: #000;
+}
