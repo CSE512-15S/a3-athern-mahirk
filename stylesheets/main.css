@@ -23,6 +23,14 @@ h1 {
   text-align: center;
 }
 
+h4 {
+  font-family: 'Raleway';
+  font-weight: 200;
+  font-size: 12px;
+  text-align: right;
+  margin-right: 20px;
+}
+
 button {
   padding: 1% 2%;
   margin: 10px;
@@ -48,9 +56,10 @@ button {
 }
 
 button:hover {
-  color: #333;
+  color: #fff;
   border-color: #333;
-  background: rgba(200, 255, 255, 1);
+  background: rgba(230, 126, 34, 0.6);
+
 }
 
 
@@ -58,7 +67,7 @@ button:hover {
 .axis line {
   fill: none;
   stroke: #666;
-  shape-rendering: crispEdges;
+  shape-rendering: optimizeSpeed;
 }
 
 .chart {
@@ -85,4 +94,21 @@ button:hover {
 
 .tweetinfo {
  fill: #000;
+}
+
+.info {
+  fill: #2980B9;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.hover {
+  cursor: pointer;
+}
+
+.dataT {
+  fill: #fff;
+  stroke: #333;
+  stroke-width: 2;
+  stroke-opacity: 0.5;
 }

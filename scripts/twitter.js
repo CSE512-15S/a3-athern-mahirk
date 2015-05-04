@@ -47,11 +47,12 @@ svg.append('g')
   .attr("y", 6)
   .attr("dy", ".7em")
   .style("text-anchor", "end")
-  .text("# Tweets ('00)");
+  .text("# Tweets ('00s)");
 
 // Add period labels
 var perI = svg.append('g')
     .attr('class', 'x axis')
+    .attr('class', 'hover')
     .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 120) + ')')
     .append("text")
             .attr("dx", width/8)//150)
@@ -60,21 +61,20 @@ var perI = svg.append('g')
             .text("Period I");
 
 var periodData = svg.append("text")
-    .attr("class", "periodinfo")
     .style({opacity: 0});
 
 perI.on('mouseover', function(d) {
-              periodData
-              .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 120) + ')')
-              .attr("x", width / 25)
-              .attr("y", "5em")
-              .text("Rumors of a Higgs-like boson")
+              periodData.attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 120) + ')')
+              .attr("x", 0)
+              .attr("y", "7em")
+              .attr("class","info")
+              .text("Period 1: Rumors of a Higgs-like boson")
               .style({opacity: 1})
-            });    
+            });
 
 perI.on('mouseout', function(d) {
-                periodData.style({opacity: 0});
-              });                    
+              periodData.style({opacity: 0});
+});
 
 // arrow marker right
 svg.append("svg:defs").selectAll("marker")
@@ -98,7 +98,7 @@ svg.append("svg:defs").selectAll("marker")
     .attr("viewBox", "0 -5 10 10")
     .attr("refX", 7)
     .attr("refY", 0)
-    .attr("markerWidth", -6)
+    .attr("markerWidth", "-6")
     .attr("markerHeight", 6)
     .attr("orient", "auto")
   .append("svg:path")
@@ -116,6 +116,7 @@ svg.append("svg:line")
 
 var perII = svg.append('g')
     .attr('class', 'x axis')
+    .attr('class', 'hover')
     .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 120) + ')')
       .append("text")
             .attr("dx", width/4)//260)
@@ -126,15 +127,16 @@ var perII = svg.append('g')
 perII.on('mouseover', function(d) {
               periodData
               .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 120) + ')')
-              .attr("x", width / 7)
-              .attr("y", "5em")
-              .text("Higgs particle mass presented")
+              .attr("x", width/7)
+              .attr("y", "7em")
+              .attr("class","info")
+              .text("Period II: Higgs particle mass presented")
               .style({opacity: 1})
-            });    
+            });
 
 perII.on('mouseout', function(d) {
                 periodData.style({opacity: 0});
-              });    
+              });
 
 svg.append("svg:line")
  .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 120) + ')')
@@ -148,6 +150,7 @@ svg.append("svg:line")
 
 var perIII = svg.append('g')
     .attr('class', 'x axis')
+    .attr('class', 'hover')
     .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 120) + ')')
       .append("text")
             .attr("dx", 1.5 * width / 4)
@@ -159,14 +162,15 @@ perIII.on('mouseover', function(d) {
               periodData
               .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 120) + ')')
               .attr("x", width / 4)
-              .attr("y", "5em")
-              .text("Rumors of Higgs boson discovery")
+              .attr("y", "7em")
+              .attr("class","info")
+              .text("Period III: Rumors of Higgs boson discovery")
               .style({opacity: 1})
-            });    
+            });
 
 perIII.on('mouseout', function(d) {
                 periodData.style({opacity: 0});
-              });    
+              });
 
 svg.append("svg:line")
  .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 120) + ')')
@@ -180,6 +184,7 @@ svg.append("svg:line")
 
 var perIV = svg.append('g')
     .attr('class', 'x axis')
+    .attr('class', 'hover')
     .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 120) + ')')
       .append("text")
             .attr("dx", 2.5 * width / 4)
@@ -191,16 +196,17 @@ perIV.on('mouseover', function(d) {
               periodData
               .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 120) + ')')
               .attr("x", 1.4*width / 4)
-              .attr("y", "5em")
-              .text("Results presented indicating existence of new particle compatible with Higgs boson")
+              .attr("y", "7em")
+              .attr("class","info")
+              .text("Period IV: Results presented indicating existence of new particle compatible with Higgs boson")
               .style({opacity: 1})
-            });    
+            });
 
 perIV.on('mouseout', function(d) {
                 periodData.style({opacity: 0});
-              });    
+              });
 
-var tweetData = svg.append("text")
+var tweetData = svg.append('g')
     .attr("class", "tweetinfo")
     .style({opacity: 0});
 
@@ -243,15 +249,27 @@ var tweetData = svg.append("text")
 
             tweet.on('mouseover', function(d) {
               tweetData
-              .attr("x", x(new Date(d.key)) + 10)
-              .attr("y", y(d.values[e].values/100) + 5)
-              .text(d.values[e].values + "  " + e + "'s")
               .style({opacity: 1})
+              .append('rect')
+              .attr('class','dataT')
+              .attr('rx', '5')
+              .attr('ry', '5')
+              .attr("width", "110px")
+              .attr("height", "25px")
+              .attr("x", x(new Date(d.key)) + 10)
+              .attr("y", y(d.values[e].values/100) - 12)
+
+              tweetData.append('text')
+              .attr("x", x(new Date(d.key)) + 20)
+              .attr("y", y(d.values[e].values/100) + 5)
+              .text(d.values[e].values + "  " + e + "'s ")
             });
 
 
             tweet.on('mouseout', function(d) {
                 tweetData.style({opacity: 0});
+                tweetData.select('rect').remove();
+                tweetData.select('text').remove();
               });
 
 
@@ -259,12 +277,14 @@ var tweetData = svg.append("text")
                     .attr("class","legend")
                     .attr("transform","translate(50,30)")
                     .style("font-size","12px")
+                    .style({opacity: 0})
                     .call(d3.legend)
 
                   setTimeout(function() {
                     legend
                       .style("font-size","15px")
                       .attr("data-style-padding",15)
+                      .style({opacity: 0.9})
                       .call(d3.legend)
                   },1000)
 
