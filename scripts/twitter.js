@@ -239,7 +239,7 @@ var tweetData = svg.append('g')
                .transition()
                .duration(500)
                 .attr("class", e + "tweet" + " op")
-                .attr("r", 6.5)
+                .attr("r", 5.5)
                  .attr("cx", function(d) {
                    return x(new Date(d.key));
                  })
