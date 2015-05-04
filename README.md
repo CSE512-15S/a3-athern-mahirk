@@ -35,7 +35,7 @@ The color was changed.
 
 ## Development Process
 
-### [Nicole Atherly](github.com/athern)
+### [Nicole Atherly](http://github.com/athern)
 
 #### Work
 
@@ -45,7 +45,7 @@ The color was changed.
 
 #### Difficulty and Process
 
-### [Mahir Kothary](github.com/mahirk)
+### [Mahir Kothary](http://github.com/mahirk)
 
 #### Work
 
