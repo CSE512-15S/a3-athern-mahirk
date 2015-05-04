@@ -32,8 +32,8 @@ Our storyboard covers our data exploration and design process. It can be viewed 
 
 ### Changes between Storyboard and the Final Implementation
 
-* We added an animation across the data points, showing them from Jun 30 to Jul 7, per day, so the viewer can follow across for a brief moment as the points are plotted. 
-* The colors of the different types of tweets was changed in the final implementation to account for color blindness. 
+* We added an animation across the data points, showing them from Jun 30 to Jul 7, per day, so the viewer can follow across for a brief moment as the points are plotted.
+* The colors of the different types of tweets was changed in the final implementation to account for color blindness.
 * We also expanded on the Period I-IV labels that appear below the x-axis of the graph. We found the best way to explain what each period was for was to add a mouse over interaction that displays information on each period.
 
 ## Development Process
@@ -43,7 +43,7 @@ Our storyboard covers our data exploration and design process. It can be viewed 
 #### Work
 
 * Created Visualizations in Tableau for the development process
-* Created interactions
+* Period scale interactions
 * Graph Design, scaling and animations
 
 #### Difficulty and Process
