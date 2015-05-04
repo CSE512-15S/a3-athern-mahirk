@@ -8,7 +8,7 @@ a3-athern-mahirk
 
 ## Analyzing the Higgs Boson Rumor via Twitter
 
-
+Rumors of the discovery of a Higgs-like particle spread through twitter before and after the announcement on July 4th, 2012. Our visualization shows how the amount of tweets spiked on that day and how tweet amounts changed during the four periods surrounding the Higgs-like particle discovery announcement. It also shows the difference in numbers of retweets, replies, and mentions, with retweets being most common. Viewers can choose to view only one type of tweet, can read the exact number of tweets per category per day, and can read more information about each period.
 
 
 ## Running Instructions
@@ -23,15 +23,18 @@ and open a port to view.
 
 This visualization is also available on [Mahir's Website](http://mahirk.me/d3playground/higgstwitter/)
 
+It will work best in Google Chrome and Internet Explorer.
+
 ## Story Board
 
-You can find our storyboard [here](storyboard.pdf?raw=true) it includes a detailed explanation on our data sets, on our discovery techniques and partially our process.
+Our storyboard covers our data exploration and design process. It can be viewed [here](storyboard.pdf?raw=true). We started out looking at our data in Tableau, but due to the large nature of the dataset, it proved difficult to iterate over different visualizations. Instead, we chose to narrow our data and decided to focus primarily on the activity time data. From this, we ended up with the basis for our final implementation of a scatterplot of the different types of tweets per day.
 
 
 ### Changes between Storyboard and the Final Implementation
 
-The storyboard primarily mentioned designs which were made on Tableau, which we used to help us visualize the data, as it contained nearly a half a million rows and would be impossible to otherwise now how the data provided created a trend across the days. We stuck to binning the data per day to show a broad overview of the tweets and type of tweets across the periods. We added an animation across the data points, showing them from Jun 30 to Jul 7, per day, so the viewer can follow across for a brief moment as the points are plotted.
-The color was changed.
+* We added an animation across the data points, showing them from Jun 30 to Jul 7, per day, so the viewer can follow across for a brief moment as the points are plotted. 
+* The colors of the different types of tweets was changed in the final implementation to account for color blindness. 
+* We also expanded on the Period I-IV labels that appear below the x-axis of the graph. We found the best way to explain what each period was for was to add a mouse over interaction that displays information on each period.
 
 ## Development Process
 
@@ -44,6 +47,10 @@ The color was changed.
 * Graph Design, scaling and animations
 
 #### Difficulty and Process
+
+First loading the entirety of the dataset into Tableau took a great amount of time. After the initial data load, any subsequent operation would take somewhere around 8 minutes. I found this to be much too slow to be of any use, so I instead switched to just looking at the higgs-activity_time data. It was much faster to iterate through designs using this amount of data, and so I was able to explore the data more quickly. This process probably took a few hours overall.
+
+The programming tasks I worked on probably took me longer than someone with more experience in JavaScript and D3 would take. I spent a lot of time reading through the documentation and examples, and hit quite a few dead ends for the tasks I was trying to implement before I found something that worked. I also ran into some compatibility issues with the browser I was using, which took some time to figure out. These tasks took much longer than the exploration/design tasks, probably closer to 6+ hours.
 
 ### [Mahir Kothary](http://github.com/mahirk)
 
