@@ -49,6 +49,157 @@ svg.append('g')
   .style("text-anchor", "end")
   .text("# Tweets ('00)");
 
+// Add period labels
+var perI = svg.append('g')
+    .attr('class', 'x axis')
+    .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 20) + ')')
+    .call(xAxis).append("text")
+            .attr("dx", width/8)//150)
+            .attr("dy", "3.5em")
+            .style("text-anchor", "middle")
+            .text("Period I");
+
+var periodData = svg.append("text")
+    .attr("class", "periodinfo")
+    .style({opacity: 0});
+
+perI.on('mouseover', function(d) {
+              periodData
+              .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 20) + ')')
+              .attr("x", width / 25)
+              .attr("y", "5em")
+              .text("Rumors of a Higgs-like boson")
+              .style({opacity: 1})
+            });    
+
+perI.on('mouseout', function(d) {
+                periodData.style({opacity: 0});
+              });                    
+
+// arrow marker right
+svg.append("svg:defs").selectAll("marker")
+    .data(["end"])
+  .enter().append("svg:marker")
+    .attr("id", String)
+    .attr("viewBox", "0 -5 10 10")
+    .attr("refX", 7)
+    .attr("refY", 0)
+    .attr("markerWidth", 6)
+    .attr("markerHeight", 6)
+    .attr("orient", "auto")
+  .append("svg:path")
+    .attr("d", "M0,-5L10,0L0,5");
+
+// arrow marker left
+svg.append("svg:defs").selectAll("marker")
+    .data(["start"])
+    .enter().append("svg:marker")
+    .attr("id", String)
+    .attr("viewBox", "0 -5 10 10")
+    .attr("refX", 7)
+    .attr("refY", 0)
+    .attr("markerWidth", -6)
+    .attr("markerHeight", 6)
+    .attr("orient", "auto")
+  .append("svg:path")
+    .attr("d", "M0,-5L10,0L0,5");
+
+svg.append("svg:line")
+ .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 20) + ')')
+    .attr("x1", width / 25)
+    .attr("x2", width / 4)
+    .attr("y1", "2em")
+    .attr("y2", "2em")
+    .attr("marker-start", "url(#start)")
+    .attr("marker-end", "url(#end)")
+    .style("stroke", "rgb(120,120,120)");
+
+var perII = svg.append('g')
+    .attr('class', 'x axis')
+    .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 20) + ')')
+      .append("text")
+            .attr("dx", width/4)//260)
+            .attr("dy", "3.5em")
+            .style("text-anchor", "middle")
+            .text("Period II");
+
+perII.on('mouseover', function(d) {
+              periodData
+              .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 20) + ')')
+              .attr("x", width / 7)
+              .attr("y", "5em")
+              .text("Higgs particle mass presented")
+              .style({opacity: 1})
+            });    
+
+perII.on('mouseout', function(d) {
+                periodData.style({opacity: 0});
+              });    
+
+svg.append("svg:line")
+ .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 20) + ')')
+    .attr("x1", width / 4)
+    .attr("x2", 1.9 * width / 4)
+    .attr("y1", "2em")
+    .attr("y2", "2em")
+    .attr("marker-start", "url(#start)")
+    .attr("marker-end", "url(#end)")
+    .style("stroke", "rgb(120,120,120)");
+
+var perIII = svg.append('g')
+    .attr('class', 'x axis')
+    .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 20) + ')')
+      .append("text")
+            .attr("dx", 1.5 * width / 4)
+            .attr("dy", "3.5em")
+            .style("text-anchor", "middle")
+            .text("Period III");
+
+perIII.on('mouseover', function(d) {
+              periodData
+              .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 20) + ')')
+              .attr("x", width / 4)
+              .attr("y", "5em")
+              .text("Rumors of Higgs boson discovery")
+              .style({opacity: 1})
+            });    
+
+perIII.on('mouseout', function(d) {
+                periodData.style({opacity: 0});
+              });    
+
+svg.append("svg:line")
+ .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 20) + ')')
+    .attr("x1", 1.9 * width / 4)
+    .attr("x2", 3.2 * width / 4)
+    .attr("y1", "2em")
+    .attr("y2", "2em")
+    .attr("marker-start", "url(#start)")
+    .attr("marker-end", "url(#end)")
+    .style("stroke", "rgb(120,120,120)");
+
+var perIV = svg.append('g')
+    .attr('class', 'x axis')
+    .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 20) + ')')
+      .append("text")
+            .attr("dx", 2.5 * width / 4)
+            .attr("dy", "3.5em")
+            .style("text-anchor", "middle")
+            .text("Period IV");
+
+perIV.on('mouseover', function(d) {
+              periodData
+              .attr('transform', 'translate(0, ' + (height - margin.top - margin.bottom - 20) + ')')
+              .attr("x", 1.5*width / 4)
+              .attr("y", "5em")
+              .text("Results presented indicating existence of new particle compatible with Higgs boson")
+              .style({opacity: 1})
+            });    
+
+perIV.on('mouseout', function(d) {
+                periodData.style({opacity: 0});
+              });    
+
 var tweetData = svg.append("text")
     .attr("class", "tweetinfo")
     .style({opacity: 0});
